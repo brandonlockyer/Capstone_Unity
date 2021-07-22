@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
     private Animator myAnimator;
+    bool grounded = false;
+    public Transform GroundCheck;
+    public LayerMask groundLayer;
     
 
     float horizontalMove = 0f;
@@ -25,7 +28,8 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        myAnimator.SetFloat("VSpeed", Input.GetAxis("Vertical"));
+
+        grounded = Physics2D.OverlapCircle(GroundCheck.position, 0.15f, groundLayer);
 
         if (Input.GetKey("a") || Input.GetKey("d"))
         {
@@ -36,15 +40,18 @@ public class PlayerMovement : MonoBehaviour
             myAnimator.SetBool("Walk", false);
         }
 
-
-        if (Input.GetButtonDown("Jump"))
+        if (grounded == false)
         {
-            jump = true;
             myAnimator.SetBool("Jump", true);
         }
         else
         {
             myAnimator.SetBool("Jump", false);
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            jump = true;
         }
 
         if (Input.GetButtonDown("Crouch"))
@@ -57,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
             crouch = false;
            
         }
-
         if (crouch == true)
         {
             myAnimator.SetBool("Crouching", true);
