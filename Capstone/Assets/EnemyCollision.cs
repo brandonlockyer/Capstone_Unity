@@ -6,6 +6,6 @@ public class EnemyCollision : MonoBehaviour
 {
     void OnTriggerEnter (Collider other)
     {
-        Debug.Log("yeet");
+        Debug.Log("yeetdaaaaaaaaaaab");
     }
 }
