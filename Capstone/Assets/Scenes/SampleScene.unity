@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 338861914}
-  bulletPrefab: {fileID: 2695550912872306958, guid: e6d5fe4c4c50ae74ea9e5dc4f4ed851b, type: 3}
+  bulletPrefab: {fileID: 8579457488721568068, guid: 488b7b9c4e8db0144b228f933ec4c6a9, type: 3}
 --- !u!1 &796204975
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +636,7 @@ GameObject:
   - component: {fileID: 796204977}
   - component: {fileID: 796204976}
   - component: {fileID: 796204979}
+  - component: {fileID: 796204980}
   m_Layer: 0
   m_Name: BirdEnemyIdleSprite
   m_TagString: Untagged
@@ -715,7 +716,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796204975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.21, y: -6.82, z: 0}
+  m_LocalPosition: {x: 4.21, y: -3.78, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -734,7 +735,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.01335448, y: -0.00000011920929}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -745,8 +746,29 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 1.1197451, y: 0.6923984}
   m_EdgeRadius: 0
+--- !u!50 &796204980
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796204975}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1178750215
 GameObject:
   m_ObjectHideFlags: 0
