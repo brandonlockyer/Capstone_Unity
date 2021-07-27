@@ -6,14 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
 
-    public float runSpeed = 40f;
+    public float runSpeed = 80f;
     bool jump = false;
     bool crouch = false;
     private Animator myAnimator;
     bool grounded = false;
     public Transform GroundCheck;
     public LayerMask groundLayer;
-    
+    public float sprintSpeed = 130f;
 
     float horizontalMove = 0f;
 
@@ -31,10 +31,23 @@ public class PlayerMovement : MonoBehaviour
 
         grounded = Physics2D.OverlapCircle(GroundCheck.position, 0.15f, groundLayer);
 
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            runSpeed = sprintSpeed;
+            myAnimator.SetBool("Running", true);
+        }
+
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            runSpeed = 80f;
+            myAnimator.SetBool("Running", false);
+        }
+
         if (Input.GetKey("a") || Input.GetKey("d"))
         {
             myAnimator.SetBool("Walk", true);
         }
+
         else
         {
             myAnimator.SetBool("Walk", false);
@@ -44,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         {
             myAnimator.SetBool("Jump", true);
         }
+
         else
         {
             myAnimator.SetBool("Jump", false);
@@ -59,15 +73,18 @@ public class PlayerMovement : MonoBehaviour
             crouch = true;
           
         } 
+
         else if (Input.GetButtonUp("Crouch"))
         {
             crouch = false;
            
         }
+
         if (crouch == true)
         {
             myAnimator.SetBool("Crouching", true);
         }
+
         else
         {
             myAnimator.SetBool("Crouching", false);
