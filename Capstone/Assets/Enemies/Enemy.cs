@@ -5,6 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int health = 100;
+    public Transform Player;
+    private bool facingRight = false;
+
 
     public void TakeDamage (int damage)
     {
@@ -14,6 +17,23 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void Update()
+    {
+      if (Player.transform.position.x < gameObject.transform.position.x && !facingRight){
+            Flip();
+        }
+      if (Player.transform.position.x > gameObject.transform.position.x && facingRight)
+        {
+            Flip();
+        }
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        gameObject.transform.Rotate(0f, 180f, 0f);
     }
 
     void Die()
