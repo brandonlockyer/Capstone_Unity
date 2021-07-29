@@ -8,6 +8,12 @@ public class MovingEnemy : MonoBehaviour
     private bool facingRight = false;
     public float speed = 5f;
     public Rigidbody2D rb;
+    private Animator myAnimator;
+
+    void Start()
+    {
+        myAnimator = GetComponent<Animator>();
+    }
 
 
 
@@ -30,6 +36,6 @@ public class MovingEnemy : MonoBehaviour
     void Move()
     {
         rb.velocity = transform.right * speed;
-     
+        myAnimator.SetBool("isMoving", true);
     }
 }
