@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingEnemy : MonoBehaviour
+public class MovingEnemy2 : MonoBehaviour
 {
     // Start is called before the first frame update
     float dirX, moveSpeed = 3f;
