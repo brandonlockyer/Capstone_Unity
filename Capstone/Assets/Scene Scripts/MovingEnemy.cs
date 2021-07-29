@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingBlock : MonoBehaviour
+public class MovingEnemy : MonoBehaviour
 {
     // Start is called before the first frame update
     float dirX, moveSpeed = 3f;
@@ -11,9 +11,9 @@ public class MovingBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x > 90f)
+        if (transform.position.x > 33.5f)
             moveRight = false;
-        if (transform.position.x < 80f)
+        if (transform.position.x < 30.5f)
             moveRight = true;
 
         if (moveRight)
