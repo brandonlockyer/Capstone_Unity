@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MovingEnemy2 : MonoBehaviour
 {
+    public float position1 = 0;
+    public float position2 = 0;
     // Start is called before the first frame update
     float dirX, moveSpeed = 3f;
     bool moveRight = true;
@@ -11,9 +13,9 @@ public class MovingEnemy2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x > 33.5f)
+        if (transform.position.x > position1)
             moveRight = false;
-        if (transform.position.x < 30.5f)
+        if (transform.position.x < position2)
             moveRight = true;
 
         if (moveRight)
