@@ -23,8 +23,10 @@ public class Bullet : MonoBehaviour
         {
             enemy.TakeDamage(damage);
         }
-
-        Destroy(gameObject);
+        if (hitInfo.gameObject.tag != "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

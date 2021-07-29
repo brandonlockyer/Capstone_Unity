@@ -45,6 +45,19 @@ public class Health : MonoBehaviour
     }
 
 
+    public void Heal(int HP)
+    {
+        currentHealth += HP;
+
+        healthBar.SetHealth(currentHealth);
+
+        if(currentHealth >= maxHealth)
+        {
+            currentHealth = 100;
+        }
+    }
+
+
     void Die()
     {
         Destroy(gameObject);

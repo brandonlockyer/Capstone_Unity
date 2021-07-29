@@ -9,6 +9,7 @@ public class MovingEnemy : MonoBehaviour
     public float speed = 5f;
     public Rigidbody2D rb;
     private Animator myAnimator;
+    public float detectionRange = 10;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class MovingEnemy : MonoBehaviour
 
     public void Update()
     {
-        if (Vector3.Distance(Player.position, transform.position) <= 100f)
+        if (Vector3.Distance(Player.position, transform.position) <= detectionRange)
         {
             if (Player.transform.position.x < gameObject.transform.position.x && !facingRight)
             {
