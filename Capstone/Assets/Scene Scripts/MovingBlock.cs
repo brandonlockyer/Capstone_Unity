@@ -11,9 +11,9 @@ public class MovingBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x > 90f)
+        if (transform.position.x > 50f)
             moveRight = false;
-        if (transform.position.x < 80f)
+        if (transform.position.x < 40f)
             moveRight = true;
 
         if (moveRight)
