@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
     public float sprintSpeed = 130f;
 
+    public DialogueUI DialogueUI => dialogueUI;
+    [SerializeField] private DialogueUI dialogueUI;
+
     float horizontalMove = 0f;
 
     void Start()
@@ -26,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dialogueUI.IsOpen) return;
+
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
 
