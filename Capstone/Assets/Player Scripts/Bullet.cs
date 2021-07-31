@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
         {
             enemy.TakeDamage(damage);
         }
-        if (hitInfo.gameObject.tag != "Player")
+        if (hitInfo.gameObject.name != "Char" && hitInfo.gameObject.name != "Bullet(Clone)" && hitInfo.gameObject.tag != "Powerup")
         {
             Destroy(gameObject);
         }

@@ -7,19 +7,21 @@ public class MoveOnTouch : MonoBehaviour
 
     private bool moving;
 
-    void OnCollsionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("MovingPlatform"))
+        if (collision.gameObject.tag == "Moving Platform")
         {
             this.transform.parent = collision.transform;
+            print("test");
         }
     }
 
-        void OnCollsionExit2D(Collision2D collision)
+        void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.gameObject.name.Equals("MovingPlatform"))
+            if (collision.gameObject.tag =="Moving Platform")
             {
                 this.transform.parent = null;
+                print("test2");
             }
         }
 }

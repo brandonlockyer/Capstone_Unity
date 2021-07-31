@@ -213,6 +213,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1303052775756279072, guid: 1b7ae0d6a2577024db45523e9fba4222, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 241413977566431263, guid: 945749d346c91a7409b5fb82c60fa64d, type: 3}
+    - target: {fileID: 1303052775756279072, guid: 1b7ae0d6a2577024db45523e9fba4222, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 355374862}
@@ -5709,7 +5713,7 @@ GameObject:
   - component: {fileID: 523579346}
   - component: {fileID: 523579345}
   - component: {fileID: 523579342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Char (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6237,11 +6241,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8456534749096361212, guid: b7f6ae75718befc4794ec2539addd124, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.3
+      value: 128.7
       objectReference: {fileID: 0}
     - target: {fileID: 8456534749096361212, guid: b7f6ae75718befc4794ec2539addd124, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.59
+      value: 11.12
       objectReference: {fileID: 0}
     - target: {fileID: 8456534749096361212, guid: b7f6ae75718befc4794ec2539addd124, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13766,6 +13770,8 @@ GameObject:
   - component: {fileID: 1788935104}
   - component: {fileID: 1788935103}
   - component: {fileID: 1788935102}
+  - component: {fileID: 1788935107}
+  - component: {fileID: 1788935108}
   m_Layer: 6
   m_Name: MovingPlatform
   m_TagString: Moving Platform
@@ -13792,7 +13798,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!61 &1788935103
 BoxCollider2D:
@@ -13801,10 +13807,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788935101}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -13899,6 +13905,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1788935107
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788935101}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28125, y: 0.28125}
+    newSize: {x: 1.28125, y: 0.28125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28125, y: 0.28125}
+  m_EdgeRadius: 0
+--- !u!68 &1788935108
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788935101}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.6329194, y: 0.15673034}
+  - {x: 0.63034564, y: 0.15673003}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1806115487
 GameObject:
   m_ObjectHideFlags: 0
@@ -14880,11 +14934,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 215973957827184160, guid: bd54495d41a89ef47bfde1fab54e2325, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.3
+      value: 128.7
       objectReference: {fileID: 0}
     - target: {fileID: 215973957827184160, guid: bd54495d41a89ef47bfde1fab54e2325, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.8238707
+      value: 13.886129
       objectReference: {fileID: 0}
     - target: {fileID: 215973957827184160, guid: bd54495d41a89ef47bfde1fab54e2325, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14998,6 +15052,10 @@ PrefabInstance:
     - target: {fileID: 650551289293858712, guid: b41f90e9426ee684bb86f40dadf66a2d, type: 3}
       propertyPath: m_Name
       value: TX Village Props Spike (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 650551289293858715, guid: b41f90e9426ee684bb86f40dadf66a2d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b41f90e9426ee684bb86f40dadf66a2d, type: 3}

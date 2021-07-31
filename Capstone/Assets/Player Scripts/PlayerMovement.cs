@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform GroundCheck;
     public LayerMask groundLayer;
     public float sprintSpeed = 130f;
+    private float speedHold;
 
     public DialogueUI DialogueUI => dialogueUI;
     [SerializeField] private DialogueUI dialogueUI;
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        speedHold = runSpeed;
         myAnimator = GetComponent<Animator>();
     }
 
@@ -44,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            runSpeed = 80f;
+            runSpeed = sprintSpeed - 50;
             myAnimator.SetBool("Running", false);
         }
 
@@ -95,6 +97,24 @@ public class PlayerMovement : MonoBehaviour
             myAnimator.SetBool("Crouching", false);
         }
     }
+
+
+    //Powerup stuff
+
+    public void SpeedUp(int boost)
+    {
+        sprintSpeed += boost;
+        runSpeed += boost;
+        Invoke("SpeedReset",10);
+    }
+
+
+    public void SpeedReset()
+    {
+        sprintSpeed = speedHold + 50;
+        runSpeed = speedHold;
+    }
+
 
     void FixedUpdate()
     {

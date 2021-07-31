@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Health : MonoBehaviour
 
     public HealthBar healthBar;
     private Animator myAnimator;
+    public GameObject questItem;
+    public bool hasQuestItem = false;
 
 
     // Start is called before the first frame update
@@ -19,6 +22,7 @@ public class Health : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        questItem.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,6 +37,13 @@ public class Health : MonoBehaviour
             myAnimator.SetBool("Dead", true);
             Invoke("Die", 2);
         }
+    }
+
+
+    public void GetQuestItem()
+    {
+        hasQuestItem = true;
+        questItem.SetActive(true);
     }
 
 
@@ -60,7 +71,9 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        Scene thisScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(thisScene.name);
+
     }
 
     public void TakeDamage(int damage)
