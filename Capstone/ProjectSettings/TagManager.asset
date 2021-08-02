@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Moving Platform
   - Powerup
+  - Bullet
+  - BreakableBox
   layers:
   - Default
   - TransparentFX
