@@ -14,6 +14,11 @@ public class Health : MonoBehaviour
     private Animator myAnimator;
     public GameObject questItem;
     public bool hasQuestItem = false;
+    public Transform questGiver;
+    public Animator npcAnimator;
+    private float timeBetweenHits = 1f;
+    private float timeSinceLastHit = 0f;
+   // public Transform Player;
 
 
     // Start is called before the first frame update
@@ -28,15 +33,30 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("q"))
+        /*if (Input.GetKeyDown("q"))
         {
             TakeDamage(20);
-        }
+        }*/
         if (currentHealth <= 0)
         {
             myAnimator.SetBool("Dead", true);
             Invoke("Die", 2);
         }
+        if (Input.GetKeyDown("f"))
+        {
+            if (hasQuestItem == true)
+            {
+                if (Vector3.Distance(this.transform.position, questGiver.position) <= 3f)
+                {
+                    hasQuestItem = false;
+                    questItem.SetActive(false);
+                    npcAnimator.SetBool("hasSandwich", true);
+                }
+            }
+        }
+
+
+        timeSinceLastHit = timeSinceLastHit + Time.deltaTime;
     }
 
 
@@ -78,8 +98,12 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
 
-        healthBar.SetHealth(currentHealth);
+        if (timeSinceLastHit >= timeBetweenHits)
+        {
+            currentHealth -= damage;
+            timeSinceLastHit = 0f;
+            healthBar.SetHealth(currentHealth);
+        }
     }
 }

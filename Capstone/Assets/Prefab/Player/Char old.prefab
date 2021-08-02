@@ -170,6 +170,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   sprintSpeed: 130
+  dialogueUI: {fileID: 0}
 --- !u!61 &8456534749096361208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -266,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 8456534748299223522}
   bulletPrefab: {fileID: 8579457488721568068, guid: 488b7b9c4e8db0144b228f933ec4c6a9, type: 3}
+  TimeBetweenShots: 5
 --- !u!114 &8456534749096361215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +283,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
+  questItem: {fileID: 0}
+  hasQuestItem: 0
 --- !u!1 &8456534749480313038
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8456534749500538272}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.018, y: 0.168, z: 0}
+  m_LocalPosition: {x: -0.018, y: 0.275, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 8456534749096361212}

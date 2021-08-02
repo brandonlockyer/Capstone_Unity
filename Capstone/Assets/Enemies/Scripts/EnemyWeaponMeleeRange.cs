@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWeapon : MonoBehaviour
+public class EnemyWeaponMeleeRange : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
@@ -10,7 +10,7 @@ public class EnemyWeapon : MonoBehaviour
     public float TimeBetweenShots = 5f; //Delay between attacks
     private float timeSinceLastShot = 0f; //How long since last attack
     private Animator myAnimator;
-    public float range = 20f;
+    public float meleeRange = 3f;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class EnemyWeapon : MonoBehaviour
     void Update()
     {
         timeSinceLastShot = timeSinceLastShot + Time.deltaTime; //increment the cooldown every second
-        if (Vector3.Distance(player.position, transform.position) <= range)
+        if (Vector3.Distance(player.position, transform.position) >= meleeRange)
         {
             myAnimator.SetBool("playerInRange", true);
         }
@@ -32,7 +32,7 @@ public class EnemyWeapon : MonoBehaviour
 
         if (timeSinceLastShot >= TimeBetweenShots)
         {
-            if (Vector3.Distance(player.position, transform.position) <= range)
+            if (Vector3.Distance(player.position, transform.position) >= meleeRange)
             {
                 
                 Shoot();
