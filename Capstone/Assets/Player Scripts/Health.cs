@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
             {
                 if (Vector3.Distance(this.transform.position, questGiver.position) <= 3f)
                 {
-                    hasQuestItem = false;
+                    /*hasQuestItem = false;*/
                     questItem.SetActive(false);
                     npcAnimator.SetBool("hasSandwich", true);
                 }
