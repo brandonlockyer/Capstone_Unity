@@ -5,7 +5,6 @@ using UnityEngine;
 public class MovingEnemy : MonoBehaviour
 {
     public Transform Player;
-    private bool facingRight = false;
     public float speed = 5f;
     public Rigidbody2D rb;
     private Animator myAnimator;
@@ -22,21 +21,15 @@ public class MovingEnemy : MonoBehaviour
     {
         if (Vector3.Distance(Player.position, transform.position) <= detectionRange)
         {
-            if (Player.transform.position.x < gameObject.transform.position.x && !facingRight)
-            {
+
                 Move();
-            }
-            if (Player.transform.position.x > gameObject.transform.position.x && facingRight)
-            {
-                Move();
-            }
         }
     }
 
 
     void Move()
     {
-        rb.velocity = transform.right * speed;
+        transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
         myAnimator.SetBool("isMoving", true);
     }
 }

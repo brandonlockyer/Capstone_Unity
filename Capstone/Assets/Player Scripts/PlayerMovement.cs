@@ -96,6 +96,11 @@ public class PlayerMovement : MonoBehaviour
         {
             myAnimator.SetBool("Crouching", false);
         }
+
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
 

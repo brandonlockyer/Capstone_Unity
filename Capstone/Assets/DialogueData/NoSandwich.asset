@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NoSandwich
   m_EditorClassIdentifier: 
   dialogue:
-  - "Brannikus: \nWoahhh, cowboy!\nWhere ya headed?"
+  - "Branikus: \nWoahhh, cowboy!\nWhere ya headed?"
   - 'Some.. THING took my sandwich a little ways up..
 
 '
