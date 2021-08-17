@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public int health = 100;
     public Transform Player;
     private bool facingRight = false;
+    public Collider2D hitBox;
+    public Animator enemy;
 
 
     public void TakeDamage (int damage)
@@ -15,7 +17,9 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Die();
+            enemy.SetBool("isDead", true);
+            hitBox.enabled = false;
+            Invoke("Die",1);
         }
     }
 
